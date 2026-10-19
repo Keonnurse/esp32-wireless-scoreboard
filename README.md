@@ -55,6 +55,30 @@ This eliminated both the flicker and the crashes.
 - Built-in ESP32 BLE libraries (`BLEDevice`, `BLEScan`, `BLEAdvertising`)
 - Font: `Arial_Black_16` from DMD32
 
+## Enclosure and stand
+
+Every printed part is a **parametric Fusion 360 Python script**. Dimensions live as tunable constants at the top of each file, so a part can be re-cut for a different panel or printer tolerance without redrawing anything.
+
+<p align="center">
+  <img src="docs/images/renders/01-scoreboard-enclosure-frame-cad.png" width="48%" alt="Scoreboard enclosure frame, Fusion 360 render">
+  <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="48%" alt="Scoreboard stand, Fusion 360 render">
+</p>
+
+| Part | Script | Notes |
+|---|---|---|
+| Stand | `cad/stand/stand.py` | Grooved cradle, 12° back tilt. Print two, one under each end of the frame |
+| Left front panel | `cad/left_panel/left_panel.py` | Slotted side panel, printed front face down |
+| Right cap | `cad/right_cap/right_cap.py` | Closed rounded end, widened 15.3 mm in v2 to close the measured seam gap |
+
+To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins**, click **+**, pick the part folder, then **Run**.
+
+## Wiring
+
+<p align="center">
+  <img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="48%" alt="ESP32 to P10 LED panel wiring">
+  <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="48%" alt="LiPo, TP4056 and ESP32 power system">
+</p>
+
 ## Repository structure
 
 ```
@@ -63,20 +87,24 @@ This eliminated both the flicker and the crashes.
 │   └── Scoreboard.ino          # receiver firmware (BLE scan + display)
 ├── ButtonSender_P1/
 │   └── ButtonSender_P1.ino     # player 1 button firmware
-└── ButtonSender_P2/
-    └── ButtonSender_P2.ino     # player 2 button firmware (same code, PLAYER = "P2_SCORE")
+├── ButtonSender_P2/
+│   └── ButtonSender_P2.ino     # player 2 button firmware (same code, PLAYER = "P2_SCORE")
+├── cad/                        # Fusion 360 scripts, one folder per part
+│   ├── stand/
+│   ├── left_panel/
+│   └── right_cap/
+└── docs/images/                # CAD renders and wiring diagrams
 ```
 
 ## What's working
 
 - Three-device BLE communication end-to-end.
 - Stable display refresh with no flicker during BLE scanning.
-- Scores 0–9 display correctly for both players on the P10 panel.
+- Scores 0–99 display correctly for both players on the P10 panel, double digits included.
 - Software debouncing on the scoreboard (800 ms window) filters out rapid repeat advertisements from the same button press.
 
 ## Known issues and to-do
 
-- **Double-digit scores don't display correctly.** `showScores()` draws only the first character when a score is ≥ 10, so 10 shows as "1", 20 shows as "2", etc. Fix: detect score length and draw both digits with adjusted x positions.
 - **No reset function.** Scores can only be cleared by power-cycling the scoreboard. Planned fix: long-press on either button triggers a reset broadcast.
 - **Single press sometimes counts as multiple increments.** The button broadcasts for 500 ms, and during that window the scoreboard's scanner can see the same advertisement multiple times. The 800 ms scoreboard-side debounce mostly handles this, but edge cases remain. Planned fix: use a non-blocking advertising window on the button side and/or include a rolling message ID in the advertisement.
 - **Blocking `delay(500)` on the button side.** While advertising, the button is unresponsive — a rapid double-press can miss the second press. Planned fix: replace with a non-blocking `millis()` check.
@@ -85,8 +113,7 @@ This eliminated both the flicker and the crashes.
 
 ## Next steps
 
-1. Fix double-digit display rendering.
-2. Implement reset and negative-score gestures on the sender firmware.
-3. Add deep sleep to the button senders and wire up LiPo + TP4056 charging.
-4. 3D print enclosures for the buttons and a frame for the P10 panel.
-5. Solder permanent connections between the scoreboard ESP32 and the P10 panel.
+1. Implement reset and negative-score gestures on the sender firmware.
+2. Add deep sleep to the button senders and wire up LiPo + TP4056 charging.
+3. 3D print enclosures for the buttons and a frame for the P10 panel.
+4. Solder permanent connections between the scoreboard ESP32 and the P10 panel.
