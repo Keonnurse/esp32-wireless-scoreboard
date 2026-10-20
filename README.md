@@ -68,7 +68,7 @@ Every printed part is a **parametric Python script**: the frame and stand in **F
 |---|---|---|
 | Stand | `cad/stand/stand.py` | Grooved cradle, 12° back tilt. Print one for the middle, or two, one under each end of the frame |
 | Left half | `cad/left_half/left_half.py` | Slotted side panel, printed front face down |
-| Right half | `cad/right_cap/right_half.py` | Closed rounded end, widened 15.3 mm in v2 to close the measured seam gap |
+| Right half | `cad/right_half/right_half.py` | Closed rounded end, widened 15.3 mm in v2 to close the measured seam gap |
 | Button case | `cad/button_enclosure/button_enclosure.py` | CadQuery. Slide-panel tower, 32 × 95 × 58 mm, USB-C slot, side panel with pull tab. 3MF and STL included |
 
 To run a Fusion part: go to **Utilities → Add-Ins → Scripts and Add-Ins**, click **+**, pick the part folder, then **Run**. The button case runs in CadQuery, or print the included 3MF/STL directly.
@@ -108,7 +108,7 @@ To run a Fusion part: go to **Utilities → Add-Ins → Scripts and Add-Ins**, c
 ├── cad/
 │   ├── stand/                   # Fusion 360
 │   ├── left_half/               # Fusion 360
-│   ├── right_cap/               # Fusion 360 (right_half.py)
+│   ├── right_half/              # Fusion 360
 │   └── button_enclosure/        # CadQuery + 3MF + STL
 └── docs/images/
     ├── renders/                 # CAD renders

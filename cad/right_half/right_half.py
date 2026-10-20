@@ -1,5 +1,5 @@
 # ============================================================
-# Scoreboard Casing - RIGHT CAP v2  (was v1; widened to close seam)
+# Scoreboard Casing - RIGHT HALF v2  (was v1; widened to close seam)
 #   CHANGE vs v1: TOTAL_W 145 -> 160.3 to close the measured 15.3mm
 #   gap at the seam. Registers off the panel's RIGHT edge (FLOOR_R),
 #   so the rounded outer end stays 20mm past the panel; the extra
@@ -28,7 +28,7 @@
 
 import adsk.core, adsk.fusion, adsk.cam, traceback
 
-TOTAL_W      = 160.3   # right cap width  (was 145; +15.3 closes seam gap)
+TOTAL_W      = 160.3   # right half width  (was 145; +15.3 closes seam gap)
 TOTAL_H      = 208.0
 OUTER_R      = 20.0
 BORDER       = 25.0
@@ -202,7 +202,7 @@ def run(context):
         ext1.setDistanceExtent(False, adsk.core.ValueInput.createByReal(cm(RAIL_THICK)))
         extrudes.add(ext1)
         body = root.bRepBodies.item(root.bRepBodies.count - 1)
-        body.name = "RightCap_v2"
+        body.name = "RightHalf_v2"
 
         # -- STEP 2: WINDOW CAVITY CUT (square, LED-trimmed) -----
         sk2 = sketches.add(front_plane); sk2.name = "Sketch_Window"
@@ -327,7 +327,7 @@ def run(context):
         extrudes.add(cut_notch)
 
         ui.messageBox(
-            "Right cap v2 built (widened +15.3 to close seam).\n"
+            "Right half v2 built (widened +15.3 to close seam).\n"
             "Width %.1f, aperture %.1f framed at x %.0f-%.1f (right opens with LED_TRIM).\n"
             "Panel stop FLOOR_R=%.1f. Back-plate track closure on the right, "
             "plate slides in from the seam.\n"
