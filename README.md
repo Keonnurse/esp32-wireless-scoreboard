@@ -64,8 +64,9 @@ Every printed part is a **parametric Fusion 360 Python script**. Dimensions live
 
 <p align="center">
   <img src="docs/images/renders/01-scoreboard-enclosure-frame-cad.png" width="48%" alt="Scoreboard enclosure frame, Fusion 360 render">
-  <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="48%" alt="Scoreboard stand, Fusion 360 render">
 </p>
+  <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="48%" alt="Scoreboard stand, Fusion 360 render">
+
 
 | Part | Script | Notes |
 |---|---|---|
@@ -80,7 +81,7 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 <p align="center">
   <img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="46%" alt="ESP32 to P10 LED panel wiring">
   <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="49%" alt="LiPo, TP4056 and ESP32 power system">
-  <img width="400" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
+<img width="400" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
 </p>
 
 ## Repository structure
@@ -88,16 +89,20 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 ```
 .
 ├── Scoreboard/
-│   └── Scoreboard.ino          # receiver firmware (BLE scan + display)
+│   └── Scoreboard.ino           # receiver: BLE scan + display
 ├── ButtonSender_P1/
-│   └── ButtonSender_P1.ino     # player 1 button firmware
+│   └── ButtonSender_P1.ino      # player 1 button
 ├── ButtonSender_P2/
-│   └── ButtonSender_P2.ino     # player 2 button firmware (same code, PLAYER = "P2_SCORE")
-├── cad/                        # Fusion 360 scripts, one folder per part
-│   ├── stand/
-│   ├── left_panel/
-│   └── right_cap/
-└── docs/images/                # CAD renders and wiring diagrams
+│   └── ButtonSender_P2.ino      # player 2 button (PLAYER = "P2_SCORE")
+├── cad/
+│   ├── stand/                   # Fusion 360
+│   ├── left_half/               # Fusion 360
+│   ├── right_cap/               # Fusion 360
+│   └── button_enclosure/        # CadQuery + 3MF + STL
+└── docs/images/
+    ├── renders/                 # CAD renders
+    ├── wiring/                  # wiring diagrams
+    └── button/                  # button enclosure photos and renders
 ```
 
 ## What's working
