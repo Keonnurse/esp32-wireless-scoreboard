@@ -1,3 +1,4 @@
+[README-no-dashes.md](https://github.com/user-attachments/files/33700572/README-no-dashes.md)
 # ESP32 Wireless Ping-Pong Scoreboard
 
 
@@ -24,17 +25,17 @@ This means:
 - No pairing or connection state to manage.
 - No reconnection logic when a device resets or goes out of range.
 - Either button can be swapped, reset, or replaced without touching the scoreboard.
-- Adding a third or fourth player unit in the future is trivial — just give it a new name.
+- Adding a third or fourth player unit in the future is trivial: just give it a new name.
 
 For a scoreboard that needs to "just work" in the middle of a game, connectionless was the cleaner design.
 
 ## Handling the two-core problem
 
 The scoreboard has to do two demanding things at the same time:
-1. Continuously refresh the P10 LED matrix (the panel won't hold its own pixels — it needs to be scanned constantly or it goes dark).
+1. Continuously refresh the P10 LED matrix (the panel won't hold its own pixels, so it needs to be scanned constantly or it goes dark).
 2. Continuously scan for BLE advertisements from the buttons.
 
-Doing both on one core caused the display to flicker and the ESP32 to crash with `Guru Meditation` errors — the hardware timer driving the display was being starved by BLE.
+Doing both on one core caused the display to flicker and the ESP32 to crash with `Guru Meditation` errors. The hardware timer driving the display was being starved by BLE.
 
 The fix:
 - **Core 0** runs a FreeRTOS task pinned to it that handles BLE scanning.
@@ -48,7 +49,7 @@ This eliminated both the flicker and the crashes.
 - 3× ESP32 development boards (ELEGOO ESP32 Dev Modules)
 - 1× P10 single-color LED matrix panel (32×16 pixels)
 - 2× 19mm metal momentary push buttons with screw terminals
-- Jumper wires (currently breadboarded — enclosures and soldered wiring are a future step)
+- Jumper wires (currently breadboarded, with enclosures and soldered wiring as a future step)
 
 ## Software
 
@@ -103,15 +104,15 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 
 - Three-device BLE communication end-to-end.
 - Stable display refresh with no flicker during BLE scanning.
-- Scores 0–99 display correctly for both players on the P10 panel, double digits included.
+- Scores 0-99 display correctly for both players on the P10 panel, double digits included.
 - Software debouncing on the scoreboard (800 ms window) filters out rapid repeat advertisements from the same button press.
 
 ## Known issues and to-do
 
 - **No reset function.** Scores can only be cleared by power-cycling the scoreboard. Planned fix: long-press on either button triggers a reset broadcast.
 - **Single press sometimes counts as multiple increments.** The button broadcasts for 500 ms, and during that window the scoreboard's scanner can see the same advertisement multiple times. The 800 ms scoreboard-side debounce mostly handles this, but edge cases remain. Planned fix: use a non-blocking advertising window on the button side and/or include a rolling message ID in the advertisement.
-- **Blocking `delay(500)` on the button side.** While advertising, the button is unresponsive — a rapid double-press can miss the second press. Planned fix: replace with a non-blocking `millis()` check.
-- **No negative-scoring or correction gesture.** Original design called for double-tap = −1. Not yet implemented.
+- **Blocking `delay(500)` on the button side.** While advertising, the button is unresponsive, so a rapid double-press can miss the second press. Planned fix: replace with a non-blocking `millis()` check.
+- **No negative-scoring or correction gesture.** Original design called for double-tap = -1. Not yet implemented.
 - **No deep sleep on the button units.** They run continuously on USB power. For battery operation, both senders need to sleep between presses and wake on GPIO interrupt.
 
 ## Next steps
