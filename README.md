@@ -1,3 +1,4 @@
+<img width="3024" height="4032" alt="IMG_3098" src="https://github.com/user-attachments/assets/a707f1bc-26ba-4b89-9dea-e8c8cc8bfd2a" />
 [README-no-dashes.md](https://github.com/user-attachments/files/33700572/README-no-dashes.md)
 # ESP32 Wireless Ping-Pong Scoreboard
 
@@ -81,7 +82,8 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 <p align="center">
   <img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="48%" alt="ESP32 to P10 LED panel wiring">
   <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="48%" alt="LiPo, TP4056 and ESP32 power system">
-</p>
+</p> <img width="200" height="267" alt="IMG_3098" src="https://github.com/user-attachments/assets/09e23e68-d0d6-4f72-9472-48f79a251422" /> 
+
 
 ## Repository structure
 
@@ -105,7 +107,7 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 - Three-device BLE communication end-to-end.
 - Stable display refresh with no flicker during BLE scanning.
 - Scores 0-99 display correctly for both players on the P10 panel, double digits included.
-- Long press to reset the scoreboard.
+- Long press to reset the scoreboard to 0 - 0.
 - Software debouncing on the scoreboard (800 ms window) filters out rapid repeat advertisements from the same button press.
 
 ## Known issues and to-do
