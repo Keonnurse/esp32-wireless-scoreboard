@@ -71,7 +71,7 @@ Every printed part is a **parametric Fusion 360 Python script**. Dimensions live
 
 | Part | Script | Notes |
 |---|---|---|
-| Stand | `cad/stand/stand.py` | Grooved cradle, 12° back tilt. Print two, one under each end of the frame |
+| Stand | `cad/stand/stand.py` | Grooved cradle, 12° back tilt. Print one for the middle, or two one under each end of the frame |
 | Left front panel | `cad/left_panel/left_panel.py` | Slotted side panel, printed front face down |
 | Right cap | `cad/right_cap/right_cap.py` | Closed rounded end, widened 15.3 mm in v2 to close the measured seam gap |
 
@@ -79,8 +79,11 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 
 ## Wiring
 
+#### Scoreboard
 <p align="center">
-<img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="46%" alt="ESP32 to P10 LED panel wiring">
+<img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="44%" alt="ESP32 to P10 LED panel wiring">
+
+#### Button
 <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="49%" alt="LiPo, TP4056 and ESP32 power system">
 <img width="400" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
 </p>
