@@ -113,7 +113,7 @@ To run a Fusion part: go to **Utilities → Add-Ins → Scripts and Add-Ins**, c
 └── docs/images/
     ├── renders/                 # CAD renders
     ├── wiring/                  # wiring diagrams
-    ├── photos/                  # build photos (location data stripped)
+    ├── photos/                  # build photos 
     └── button/                  # button enclosure photos and renders
 ```
 
