@@ -105,19 +105,16 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 - Three-device BLE communication end-to-end.
 - Stable display refresh with no flicker during BLE scanning.
 - Scores 0-99 display correctly for both players on the P10 panel, double digits included.
+- Long press to reset the scoreboard.
 - Software debouncing on the scoreboard (800 ms window) filters out rapid repeat advertisements from the same button press.
 
 ## Known issues and to-do
-
-- **No reset function.** Scores can only be cleared by power-cycling the scoreboard. Planned fix: long-press on either button triggers a reset broadcast.
-- **Single press sometimes counts as multiple increments.** The button broadcasts for 500 ms, and during that window the scoreboard's scanner can see the same advertisement multiple times. The 800 ms scoreboard-side debounce mostly handles this, but edge cases remain. Planned fix: use a non-blocking advertising window on the button side and/or include a rolling message ID in the advertisement.
-- **Blocking `delay(500)` on the button side.** While advertising, the button is unresponsive, so a rapid double-press can miss the second press. Planned fix: replace with a non-blocking `millis()` check.
 - **No negative-scoring or correction gesture.** Original design called for double-tap = -1. Not yet implemented.
 - **No deep sleep on the button units.** They run continuously on USB power. For battery operation, both senders need to sleep between presses and wake on GPIO interrupt.
 
 ## Next steps
 
 1. Implement reset and negative-score gestures on the sender firmware.
-2. Add deep sleep to the button senders and wire up LiPo + TP4056 charging.
+2. Add deep sleep or on/off switches on the button.
 3. 3D print enclosures for the buttons and a frame for the P10 panel.
 4. Solder permanent connections between the scoreboard ESP32 and the P10 panel.
