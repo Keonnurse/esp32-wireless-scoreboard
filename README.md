@@ -1,6 +1,6 @@
 # ESP32 Wireless Ping-Pong Scoreboard
 
-<img src="https://github.com/user-attachments/assets/eb24efb0-4113-4301-8e6b-09717e2b3c53" height="267" alt="Scoreboard demo"> <img src="docs/images/photos/IMG_2350.jpg" height="267" alt="IMG_2350"> <img src="https://github.com/user-attachments/assets/2e24577c-931a-43d5-90a1-c2882931102d" height="267" alt="IMG_3167"> <img src="docs/images/photos/IMG_1653.jpg" height="267" alt="IMG_1653">
+<img src="https://github.com/user-attachments/assets/eb24efb0-4113-4301-8e6b-09717e2b3c53" height="267" alt="Scoreboard demo"> <img src="docs/images/photos/IMG_2350.jpg" height="267" alt="IMG_2350"> <img src="docs/images/photos/IMG_1653.jpg" height="267" alt="IMG_1653">
 
 A three-device wireless scoreboard system built with ESP32 microcontrollers communicating over Bluetooth Low Energy (BLE). Two player buttons send score updates wirelessly to a central scoreboard display.
 
