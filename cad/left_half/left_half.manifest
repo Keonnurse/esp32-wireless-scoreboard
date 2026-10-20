@@ -1,0 +1,11 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Keon Nurse",
+	"description":	{
+		"":	"Scoreboard frame, left half v23"
+	},
+	"version":	"",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
