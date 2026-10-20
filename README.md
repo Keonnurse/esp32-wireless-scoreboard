@@ -64,7 +64,7 @@ Every printed part is a **parametric Fusion 360 Python script**. Dimensions live
 
 <p align="center">
   <img src="docs/images/renders/01-scoreboard-enclosure-frame-cad.png" width="48%" alt="Scoreboard enclosure frame, Fusion 360 render">
-  <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="48%" alt="Scoreboard stand, Fusion 360 render">
+  <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="44%" alt="Scoreboard stand, Fusion 360 render">
 
 </p>
 
@@ -80,8 +80,8 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 ## Wiring
 
 <p align="center">
-  <img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="46%" alt="ESP32 to P10 LED panel wiring">
-  <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="49%" alt="LiPo, TP4056 and ESP32 power system">
+<img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="46%" alt="ESP32 to P10 LED panel wiring">
+<img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="49%" alt="LiPo, TP4056 and ESP32 power system">
 <img width="400" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
 </p>
 
