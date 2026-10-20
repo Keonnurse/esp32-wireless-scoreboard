@@ -80,7 +80,7 @@ To run one: in Fusion 360 go to **Utilities → Add-Ins → Scripts and Add-Ins*
 <p align="center">
   <img src="docs/images/wiring/05-esp32-to-p10-led-panel-wiring.png" width="48%" alt="ESP32 to P10 LED panel wiring">
   <img src="docs/images/wiring/04-power-system-lipo-tp4056-esp32.png" width="48%" alt="LiPo, TP4056 and ESP32 power system">
-  <img width="200" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
+  <img width="400" height="267" alt="RotatedIMG_3098" src="https://github.com/user-attachments/assets/893e3e7b-09cb-444a-b12f-5f5082d4092c" />
 </p>
 
 ## Repository structure
