@@ -64,8 +64,9 @@ Every printed part is a **parametric Fusion 360 Python script**. Dimensions live
 
 <p align="center">
   <img src="docs/images/renders/01-scoreboard-enclosure-frame-cad.png" width="48%" alt="Scoreboard enclosure frame, Fusion 360 render">
-</p>
   <img src="docs/images/renders/03-scoreboard-stand-bracket-cad.png" width="48%" alt="Scoreboard stand, Fusion 360 render">
+
+</p>
 
 
 | Part | Script | Notes |
