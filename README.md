@@ -1,9 +1,7 @@
 # ESP32 Wireless Ping-Pong Scoreboard
 
 
-https://github.com/user-attachments/assets/dc6d90b7-e0bc-494a-aaa9-5740f1339659
-
-<img width="200" height="267" alt="IMG_3166" src="https://github.com/user-attachments/assets/d239a28c-53a5-4b6c-b9f7-6dd79fad32ec" /> <img width="200" height="267" alt="IMG_3167 (1)" src="https://github.com/user-attachments/assets/2e24577c-931a-43d5-90a1-c2882931102d" />
+<img width="200" height="267" alt="scoreboard-demo" src="https://github.com/user-attachments/assets/eb24efb0-4113-4301-8e6b-09717e2b3c53" /> <img width="200" height="267" alt="IMG_3166" src="https://github.com/user-attachments/assets/d239a28c-53a5-4b6c-b9f7-6dd79fad32ec" /> <img width="200" height="267" alt="IMG_3167 (1)" src="https://github.com/user-attachments/assets/2e24577c-931a-43d5-90a1-c2882931102d" />
 
 
 
